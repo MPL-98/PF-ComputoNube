@@ -1,0 +1,34 @@
+
+<div class="row p-4">
+    {{#each juegos}}
+    <div class="col-md-4">
+        <div class="card text-center">
+            <a href="#">
+                <img src="../{{ruta_imagen}}" class="card-img-top">
+            </a>
+            <div class="card-body">           
+                <h4 class="card-title text-uppercase">
+                    {{nombre}}
+                </h4>
+                <p class="card-text">{{ descripcion }}</p>
+                <a href="/juegos/{{juegos_id}}" class="btn btn-primary">Ver</a>
+                <a href="/juegos/agregar_uso/{{juegos_id}}" class="btn btn-secondary">Calificar Empresa</a>
+
+            </div>
+            {{#if ../usuario.es_admin}}
+            <div class="card-footer">
+                <a href="/juegos/eliminar/{{juegos_id}}" class="btn btn-outline-danger">Eliminar</a>
+                <a href="/juegos/editar/{{juegos_id}}" class="btn btn-outline-warning">Editar</a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No encontramos empleos con esos parametros.</p>
+                <a href="/juegos/agregar">Agregue uno</a>
+            </div>
+        </div>
+    {{/each}}
+</div>

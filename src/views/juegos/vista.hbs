@@ -1,0 +1,31 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="card text-center col-md-8">
+            <div class="card-header">
+                <img src="../{{juego.ruta_imagen}}" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{juego.nombre}}</h3>
+                <p class="card-text">{{juego.descripcion}}</p>
+                <h5 class="card-text">Instrucciones</h5>
+                <p class="card-text">{{juego.instrucciones}}</p>
+                <h5 class="card-text">Lenguaje</h5>
+                <p class="card-text">{{juego.vocabulario}}</p>
+                <h5 class="card-text">El nivel recomedado es: {{juego.nivel}}</h5>
+                <a href="#" class="btn btn-info mt-1">Relacionados</a>
+            </div>
+            {{#if usuario.es_admin}}
+            <div class="card-footer">
+                <a href="/juegos/editar/{{juego.juegos_id}}" class="btn btn-outline-dark">Editar</a>
+                <a href="/juegos/eliminar/{{juego.juegos_id}}" class="btn btn-outline-danger m-2">Eliminar</a>
+            </div>
+            {{/if}}
+        </div>
+        <div class="list-group col-md-3 container">
+            <li class="list-group-item list-group-item-info">EMPLEOS RELACIONADOS</li>
+            {{#each juegos}}
+            <a href="/juegos/{{juegos_id}}" class="list-group-item list-group-item-action">{{nombre}}</a>
+            {{/each}}
+        </div>
+    </div>
+</div>

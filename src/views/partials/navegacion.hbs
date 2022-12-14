@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">DEV-JOBS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+                {{#if usuario}}
+                <form action="/juegos/buscar" class="d-flex" method="post">
+                    <input class="form-control me-2" type="search" name="palabra_clave" placeholder="Busca por palabra o nivel" aria-label="Search">
+                    <button class="btn btn-sm btn-outline-success me-2" type="submit">Buscar</button>
+                </form>
+                <a class="nav-link" href="/juegos">Ver empleos</a>
+                <a class="nav-link" href="/usuarios/cerrarSesion">Cerrar Sesion</a>
+                {{else}}
+                <a class="nav-link" href="/usuarios/registro">Registrate</a>
+                <a class="nav-link" href="/usuarios/iniciar">Inicia Sesión</a>
+                {{/if}}
+                {{#if usuario.es_admin}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Opciones Administrativas
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/juegos/agregar">Agregar empleo</a></li>
+                        <li><a class="dropdown-item" href="/estadisticas">Ver estadisticas de empleo</a></li>
+                    </ul>
+                </li>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</nav>

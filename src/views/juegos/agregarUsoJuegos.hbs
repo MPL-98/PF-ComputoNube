@@ -1,0 +1,20 @@
+<div class="container p-4">
+    <div class="col-md-6 mx-auto">
+        <div class="card text-center">
+            <div class="card-header">
+                <img src="../../{{juego.ruta_imagen}}" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{juego.nombre}}</h4>
+                <form action="/juegos/agregar_uso/{{juego.juegos_id}}" method="post" enctype="multipart/form-data">
+                    <div class="form-group"><textarea class="form-control" name="comentarios" placeholder="Comentarios" rows="3"></textarea></div>
+                    <div class="form-group ">
+                        <label class="form-label">¿Qué calificación le darias a la empresa?</label>
+                        <input type="range" class="form-range" min="1" max="10" name="calificacion">
+                    </input>
+                    <button class="btn btn-info col-12 mt-2">Aceptar</button>
+                </form>
+            </form>
+        </div>
+    </div>
+</div>

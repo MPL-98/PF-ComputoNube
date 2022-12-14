@@ -1,0 +1,31 @@
+<div class="row p-5">
+    <div class="col-md-6 mx-auto">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>Registro de usuario</h1>
+            </div>
+            <div class="card-body">
+                <form action="/usuarios/registro" method="post">
+                    <div class="form-group mt-2 p-1">
+                        <input type="text" class="form-control" name="usuario_id" placeholder="Ingresa tu ID" value="{{usuario_id}}">
+                    </div>
+                    <div class="form-group mt-2 p-1">
+                        <input type="text" class="form-control" name="nombre" placeholder="Ingresa tu nombre" value="{{nombre}}">
+                    </div>
+                    <div class="form-group mt-2 p-1">
+                        <input type="text" class="form-control" name="apellidos" placeholder="Ingresa tus apellidos" value="{{apellidos}}">
+                    </div>
+                    <div class="form-group mt-2 p-1">
+                        <input type="password" class="form-control" name="contrasena" placeholder="Ingresa tu contraseña">
+                    </div>
+                    <div class="form-group mt-2 p-1">
+                        <input type="password" class="form-control" name="confirmarContrasena" placeholder="Repite tu contraseña">
+                    </div>
+                    <button class="btn btn-warning col-12 p-1 mt-2">
+                        Registrate
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
